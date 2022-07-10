@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+  border: 10px solid rgb(122, 122, 169);
+  width: 700px;
+  height: 500px;
+
+}
+.item {
+border: .1px solid black;
+display: flex;
+height: 100%;
+width: 100%;
+overflow: hidden;
+}
+
+.column {
+height: 100%;
+width: 100%;
+display: grid;
+}
+
+
+
+
+.hover {
+  background-color: black;
+
+}
+
+
+
