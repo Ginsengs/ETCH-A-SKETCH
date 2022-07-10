@@ -6,13 +6,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <div id="container">
 
     </div>
 
 
-
-    <button onclick="newGrid()">New Grid!</button>
+    <div class="menu">
+        <label for="grid size">Grid Size: </label>
+        <input type="range" min="2" max="100" value="16" class="slider" id="myRange">
+        <button>Clear</button>
+      </div>
+      
 </body>
 <script src="script.js"></script>
 </html>

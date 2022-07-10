@@ -1,13 +1,12 @@
-const container = document.querySelector(".container")
+const container = document.querySelector("#container")
 
-for(let i= 0; i < 16; i++){
+for (let i = 0; i < 16; i++) {
     const col = document.createElement('div');
     col.classList.add('column');
 
-    for(let x = 0; x < 16; x++){
+    for (let x = 0; x < 16; x++) {
         const grid = document.createElement('div');
         grid.classList.add('item');
-        grid.textContent=x+1;
         container.appendChild(col)
         col.appendChild(grid);
     }
@@ -16,44 +15,59 @@ for(let i= 0; i < 16; i++){
 
 
 
-function createGrid(size){
-    for(let i= 0; i < size; i++){
+function createGrid(size) {
+    const body = document.getElementById("container");
+    while (body.hasChildNodes()) {
+        body.removeChild(body.firstChild);
+    }
+
+    for (let i = 0; i < size; i++) {
         const col = document.createElement('div');
         col.classList.add('column');
-    
-        for(let x = 0; x < size; x++){
+
+        for (let x = 0; x < size; x++) {
             const grid = document.createElement('div');
             grid.classList.add('item');
-            grid.textContent=x+1;
             container.appendChild(col)
             col.appendChild(grid);
         }
     }
+    drawingEffect();
+}
+
+drawingEffect();
+
+
+
+
+function drawingEffect() {
+    const grids = document.querySelectorAll(".item")
+    grids.forEach(gri => gri.addEventListener('mouseenter', drawer));
+
+    function drawer(e) {
+        console.log(e)
+        e.target.classList.add("hover")
+
+    }
+
 }
 
 
 
 
+const sliderContainer = document.querySelector(".menu")
+var slider = document.getElementById("myRange");
+const output = document.createElement('p')
+output.textContent = slider.value + "x" + slider.value; // Display the default slider value
+sliderContainer.appendChild(output)
 
 
-const grids = document.querySelectorAll(".item")
-
-
-grids.forEach(gri => gri.addEventListener('mouseenter', drawer));
-
-
-function drawer(e){
-    console.log(e)
-    e.target.classList.add("hover")
-
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function() {
+    output.textContent = this.value + "x" + this.value;
+    createGrid(this.value)
 }
 
-function newGrid(){
-    let gridSize = prompt("State the grid size, maximum is 100: ")
-    console.log(gridSize)
-
-    createGrid(gridSize)
-}
 
 
 
