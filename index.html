@@ -4,18 +4,28 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <h1>Etch-A-Sketch</h1>
     <div id="container">
 
     </div>
 
+    <fieldset>
+        <legend>Menu</legend>
+        <div class="menu-content">
+        <input type="color" id="myColor">
 
-    <div class="menu">
-        <label for="grid size">Grid Size: </label>
-        <input type="range" min="2" max="100" value="16" class="slider" id="myRange">
-        <button>Clear</button>
+    <div class="gridSizing">
+        <input type="range" min="2" max="100" value="2" class="slider" id="myRange">
       </div>
+      <button onclick=rainbowEffect()>Rainbow</button>
+      <button onclick=clearGrid()>Clear</button>
+    </div>
+    </fieldset>
       
 </body>
 <script src="script.js"></script>
