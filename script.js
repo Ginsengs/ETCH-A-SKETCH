@@ -52,6 +52,10 @@ function rainbowEffect(){
 
 }
 
+function eraserEffect(){
+	drawingEffect("#FFFFFF");
+}
+
 
 // function to create the drawing over grid effect
 function drawingEffect(color) {
